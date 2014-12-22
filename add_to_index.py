@@ -12,8 +12,14 @@
 
 # If the keyword is not in the index,
 # add an entry to the index: [keyword,[url]]
-
 def add_to_index(index,keyword,url):
+   for entry in index:
+      if entry[0] == keyword:
+         entry[1].append(url)
+      return
+   index.append([keyword,[url]])
+
+def add_to_index1(index,keyword,url):
    exist = 0
    
    for i in range(len(index)):
